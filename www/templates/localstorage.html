@@ -1,0 +1,40 @@
+<ion-view view-title="LocalStorage">
+  <ion-content class="padding">
+
+    <style>
+      /* LocalStoraage */
+      #result{
+        font-size: 20px;
+        font-weight: bold;
+        color: blue;
+      }
+    </style>
+
+    <h2>Local Storage</h2>
+
+    <p><button onclick="clickCounter()" type="button">Click me!</button></p>
+    <div id="result"></div>
+
+
+
+
+    <script>
+      //
+      // Local Storage
+      //
+      function clickCounter() {
+        if(typeof(Storage) !== "undefined") {
+          if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+          } else {
+            localStorage.clickcount = 1;
+          }
+          document.getElementById("result").innerHTML = localStorage.clickcount + " time(s).";
+        } else {
+          document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+        }
+      }
+    </script>
+
+  </ion-content>
+</ion-view>

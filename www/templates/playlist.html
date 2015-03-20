@@ -1,7 +1,37 @@
-<ion-view view-title="HTML5 Feature">
-  <ion-content>
-    <h1>Content page</h1>
-      content of the playlist
-      {{id.playlistId}}
+<ion-view view-title="Touch">
+  <ion-content class="padding">
+
+    <style>
+      /* LocalStoraage */
+      #result{
+        font-size: 20px;
+        font-weight: bold;
+        color: blue;
+      }
+    </style>
+
+
+
+
+
+
+    <script>
+      //
+      // Local Storage
+      //
+      function clickCounter() {
+        if(typeof(Storage) !== "undefined") {
+          if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+          } else {
+            localStorage.clickcount = 1;
+          }
+          document.getElementById("result").innerHTML = localStorage.clickcount + " time(s).";
+        } else {
+          document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+        }
+      }
+    </script>
+
   </ion-content>
 </ion-view>

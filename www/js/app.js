@@ -23,6 +23,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
+
   .state('app', {
     url: "/app",
     abstract: true,
@@ -30,20 +31,58 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: "/search",
+
+
+      .state('app.home', {
+        url: "/home",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/home.html"
+          }
+        }
+      })
+
+  .state('app.video', {
+    url: "/video",
     views: {
       'menuContent': {
-        templateUrl: "templates/search.html"
+        templateUrl: "templates/video.html",
+        controller: 'videoCtrl'
       }
     }
   })
 
-  .state('app.browse', {
-    url: "/browse",
+      .state('app.acelerometer', {
+    url: "/acelerometer",
     views: {
       'menuContent': {
-        templateUrl: "templates/browse.html"
+        templateUrl: "templates/acelerometer.html"
+      }
+    }
+  })
+
+  .state('app.localstorage', {
+    url: "/localstorage",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/localstorage.html"
+      }
+    }
+  })
+
+  .state('app.touch', {
+    url: "/touch",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/touch.html"
+      }
+    }
+  })
+      .state('app.linkapp', {
+    url: "/linkapp",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/linkapp.html"
       }
     }
   })
@@ -51,7 +90,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/playlists",
       views: {
         'menuContent': {
-          templateUrl: "templates/playlists.html",
+          templateUrl: "templates/linkapp.html",
           controller: 'PlaylistsCtrl'
         }
       }
@@ -67,5 +106,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/home');
 });

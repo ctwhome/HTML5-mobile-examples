@@ -1,0 +1,39 @@
+<ion-view view-title="Video">
+  <ion-content class="padding">
+    <h1>Color Video</h1>
+
+    <style>
+      /*
+      * This code is only here because of the example
+      */
+
+      /* I'm using CSS3 to translate the video on the X axis to give it a mirror effect */
+      #source {
+        display: block;
+        margin: 20px 0;
+        max-width: 100%;
+      }
+
+      .supported #source {
+        -webkit-transform: rotateY(180deg) rotate3d(1, 0, 0, 0deg);
+        -o-transform: rotateY(180deg) rotate3d(1, 0, 0, 0deg);
+        -moz-transform: rotateY(180deg) rotate3d(1, 0, 0, 0deg);
+        -ms-transform: rotateY(180deg) rotate3d(1, 0, 0, 0deg);
+        transform: rotateY(180deg) rotate3d(1, 0, 0, 0deg);
+      }
+
+      video { width: 100%; }
+    </style>
+
+    <article>
+      <label for="hue">Color <input type="range" min="0" max="360" value="0" id="hue"></label> <output id="target"></output>
+      <video id="video" muted loop autoplay controls>
+        <source src="/assets/remy-and-ellis2.mp4"></source>
+        <source src="/assets/remy-and-ellis2.webm"></source>
+      </video>
+      <canvas id="source"></canvas>
+    </article>
+
+  </ion-content>
+
+</ion-view>
